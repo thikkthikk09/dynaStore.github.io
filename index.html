@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dyna Store | ហាងលក់ហ្គេមអនឡាញ</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="logo" href="#" aria-label="ទំព័រដើម Dyna Store">
+        <img class="logo-mark" src="assets/logo.jpeg?v=1" alt="Dyna Store logo">
+        Dyna Store
+      </a>
+      <div class="nav-links" aria-label="ម៉ឺនុយសំខាន់">
+        <a href="#games">ហ្គេម</a>
+        <a href="#coins">Coins</a>
+        <a href="#deals">ប្រូម៉ូសិន</a>
+        <a href="#recommend">ណែនាំ</a>
+        <a href="#membership">សមាជិកភាព</a>
+        <a href="#support">ជំនួយ</a>
+      </div>
+      <div class="nav-actions">
+        <div class="coin-balance" aria-label="ចំនួន Coins របស់អ្នក">
+          <span class="coin-icon">C</span>
+          <span>
+            <small>Player Coins</small>
+            <strong id="playerCoins">0</strong>
+          </span>
+        </div>
+        <div class="google-account">
+          <button class="google-connect" id="googleConnectButton" type="button">Connect Google</button>
+          <div class="google-profile" id="googleProfile" hidden>
+            <img id="googleAvatar" src="" alt="">
+            <span>
+              <small id="googleEmail">Google Account</small>
+              <strong id="googleName">Player</strong>
+            </span>
+          </div>
+        </div>
+        <button class="settings-button" id="settingsButton" type="button" aria-label="Player profile settings">Settings</button>
+        <button class="cart-button" type="button" aria-label="មើលកន្ត្រកទំនិញ" aria-controls="cartPanel" aria-expanded="false">
+          កន្ត្រក <span id="cartCount">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">ទាញយកភ្លាមៗ។ ប្រូម៉ូសិនរៀងរាល់សប្តាហ៍។ មិនបាច់រង់ចាំ។</p>
+        <h1>ទិញហ្គេមដែលអ្នកចូលចិត្តបន្ទាប់បានយ៉ាងរហ័ស។</h1>
+        <p class="hero-text">
+          ស្វែងរកហ្គេម PC និង Console គុណភាពខ្ពស់ ទទួលបានការបញ្ចុះតម្លៃពិសេស ហើយរក្សាបណ្ណាល័យហ្គេមរបស់អ្នកឱ្យរួចរាល់គ្រប់ពេល។
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#games">ទិញហ្គេម</a>
+          <a class="button secondary" href="#deals">មើលប្រូម៉ូសិន</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="ហ្គេមពិសេស">
+        <span class="badge">ពិសេស</span>
+        <h2>Neon Drift Legends</h2>
+        <p>ប្រណាំងក្នុងទីក្រុងសាយប័រដែលមានភ្លៀង ជាមួយមិត្តភក្តិអនឡាញ។</p>
+        <div class="price-row">
+          <span>5,000 Coins</span>
+          <small>បញ្ចុះ 20% ថ្ងៃនេះ</small>
+        </div>
+      </aside>
+    </section>
+
+    <section class="stats" aria-label="ចំណុចពិសេសរបស់ហាង">
+      <div>
+        <strong>2,500+</strong>
+        <span>ហ្គេមមានលក់</span>
+      </div>
+      <div>
+        <strong>24/7</strong>
+        <span>ដឹកជញ្ជូនឌីជីថលភ្លាមៗ</span>
+      </div>
+      <div>
+        <strong>4.9/5</strong>
+        <span>ការវាយតម្លៃពីអ្នកលេង</span>
+      </div>
+    </section>
+
+    <section class="section-heading" id="coins">
+      <p class="eyebrow">Coin Shop</p>
+      <h2>ទិញ Coins ដើម្បីទិញហ្គេម</h2>
+      <p>ជ្រើសរើសកញ្ចប់ Coins ហើយបង់ប្រាក់តាម Bakong KHQR។ Coins នឹងចូល Wallet បន្ទាប់ពីការបង់ប្រាក់ត្រូវបានផ្ទៀងផ្ទាត់។</p>
+    </section>
+
+    <section class="coin-grid" id="coinGrid" aria-label="កញ្ចប់ Coins"></section>
+
+    <section class="section-heading" id="games">
+      <p class="eyebrow">លក់ដាច់ជាងគេ</p>
+      <h2>ហ្គេមពេញនិយម</h2>
+      <p>ជ្រើសរើសហ្គេមដែលបានណែនាំ រួមមានប្រភេទ Action, Racing, Strategy និង RPG។</p>
+    </section>
+
+    <section class="game-grid" id="gameGrid" aria-label="បញ្ជីហ្គេម"></section>
+
+    <section class="deal-banner" id="deals">
+      <div>
+        <p class="eyebrow">ប្រូម៉ូសិនចុងសប្តាហ៍</p>
+        <h2>សន្សំបានរហូតដល់ 60% លើហ្គេមលេងជាក្រុម</h2>
+        <p>ប្រមូលក្រុមរបស់អ្នកមកលេងហ្គេម Multiplayer, Party និង Online Adventure ដ៏ពេញនិយម។</p>
+      </div>
+      <a class="button primary" href="#games">មើលការផ្តល់ជូន</a>
+    </section>
+
+    <section class="section-heading" id="recommend">
+      <p class="eyebrow">Customer Recommend</p>
+      <h2>អតិថិជនណែនាំ</h2>
+      <p>មើលមតិយោបល់ពីអ្នកលេងដែលបានទិញហ្គេម និង Coins ពី Dyna Store។</p>
+      <button class="button secondary recommend-toggle" id="recommendToggle" type="button" aria-controls="recommendForm" aria-expanded="false">
+        សរសេរការណែនាំ
+      </button>
+    </section>
+
+    <section class="recommend-grid" id="recommendGrid" aria-label="មតិយោបល់អតិថិជន">
+      <article class="recommend-card">
+        <div class="recommend-avatar">D</div>
+        <p>ទិញ Coins លឿន ហើយអាចយកទៅទិញហ្គេមបានងាយ។ UI ស្រួលប្រើណាស់។</p>
+        <strong>Dara Player</strong>
+        <span>បានណែនាំ GTA 5 MODE</span>
+      </article>
+      <article class="recommend-card">
+        <div class="recommend-avatar">S</div>
+        <p>មានប្រូម៉ូសិនល្អៗ ហើយការទូទាត់តាម KHQR ងាយស្រួលសម្រាប់ខ្ញុំ។</p>
+        <strong>Sokha Gamer</strong>
+        <span>បានណែនាំ Realmforge Odyssey</span>
+      </article>
+      <article class="recommend-card">
+        <div class="recommend-avatar">V</div>
+        <p>ហ្គេមមានជម្រើសច្រើន តម្លៃ Coins មើលងាយយល់ ហើយទិញបានភ្លាមៗ។</p>
+        <strong>Vireak Pro</strong>
+        <span>បានណែនាំ Shadow Ops</span>
+      </article>
+    </section>
+
+    <form class="recommend-form" id="recommendForm" hidden>
+      <div>
+        <p class="eyebrow">Write Recommend</p>
+        <h3>សរសេរការណែនាំរបស់អ្នក</h3>
+      </div>
+      <input id="recommendName" type="text" placeholder="ឈ្មោះរបស់អ្នក">
+      <input id="recommendGame" type="text" placeholder="ហ្គេមដែលអ្នកណែនាំ" required>
+      <textarea id="recommendText" rows="3" placeholder="សរសេរមតិយោបល់..." required></textarea>
+      <button class="button primary" type="submit">បង្ហោះការណែនាំ</button>
+    </form>
+
+    <section class="membership" id="membership">
+      <div>
+        <p class="eyebrow">Dyna Store Plus</p>
+        <h2>ទទួលបានអត្ថប្រយោជន៍ច្រើនជាងមុនរាល់ការទិញ។</h2>
+        <p>
+          សមាជិកនឹងទទួលបានពិន្ទុបន្ថែម សិទ្ធិចូលប្រើហ្គេមថ្មីមុនគេ និងការផ្តល់ជូនពិសេសប្រចាំខែ។
+        </p>
+      </div>
+      <ul>
+        <li>ទទួលបាន 5% ជាក្រេឌីតហាងរាល់ការបញ្ជាទិញ</li>
+        <li>បញ្ចុះតម្លៃពិសេសសម្រាប់សមាជិកប៉ុណ្ណោះ</li>
+        <li>សេវាជំនួយអតិថិជនអាទិភាព</li>
+      </ul>
+    </section>
+  </main>
+
+  <aside class="cart-panel" id="cartPanel" aria-label="កន្ត្រកទំនិញ" hidden>
+    <div>
+      <h2>កន្ត្រករបស់អ្នក</h2>
+      <p id="cartEmpty">បន្ថែមហ្គេមដើម្បីចាប់ផ្តើមការបញ្ជាទិញ។</p>
+      <ul id="cartItems" class="cart-items"></ul>
+    </div>
+    <div class="cart-footer">
+      <div class="wallet-row">
+        <span>សមតុល្យ Coins</span>
+        <strong id="walletBalance">0 Coins</strong>
+      </div>
+      <div class="total-row">
+        <span>សរុប</span>
+        <strong id="cartTotal">0 Coins</strong>
+      </div>
+      <p class="cart-message" id="cartMessage"></p>
+      <button class="button primary full-width" id="checkoutButton" type="button">ទិញហ្គេមដោយ Coins</button>
+      <button class="button secondary full-width cancel-buy-button" id="cancelBuyButton" type="button">បោះបង់ការទិញ</button>
+      <button class="button secondary full-width download-button" id="downloadPurchasedButton" type="button" hidden>
+        ទាញយកហ្គេមដែលបានទិញ
+      </button>
+    </div>
+  </aside>
+
+  <section class="payment-modal" id="paymentModal" hidden aria-label="ជម្រើសបង់ប្រាក់">
+    <div class="payment-card">
+      <button class="close-payment" id="closePayment" type="button" aria-label="បិទម៉ឺនុយបង់ប្រាក់">&times;</button>
+      <p class="eyebrow">ជ្រើសរើសការបង់ប្រាក់</p>
+      <h2>ម៉ឺនុយបង់ប្រាក់</h2>
+      <p class="payment-note">បង់ប្រាក់តាម Bakong KHQR ដើម្បីបន្ថែម Coins ទៅ Wallet។</p>
+      <div class="payment-total">
+        <span>ប្រាក់ត្រូវបង់</span>
+        <strong id="paymentTotal">$0.00</strong>
+      </div>
+      <div class="payment-options">
+        <button type="button" data-payment="aba">Bakong KHQR</button>
+      </div>
+      <div class="qr-panel" id="abaQrPanel" hidden>
+        <h3>Bakong KHQR</h3>
+        <img class="qr-image" src="assets/khqr-mao-dyna.png" alt="Bakong KHQR payment code">
+        <p>ស្កេន KHQR ដើម្បីទិញកញ្ចប់ Coins។ ពេល Bakong បញ្ជាក់ថាបង់ប្រាក់ជោគជ័យ Coins នឹងចូល Wallet ស្វ័យប្រវត្តិ។</p>
+        <div class="md5-box" id="md5Box" hidden>
+          <span>MD5</span>
+          <code id="khqrMd5">-</code>
+        </div>
+        <p class="topup-status" id="topupStatus" hidden></p>
+        <p class="payment-status" id="paymentStatus">កំពុងរង់ចាំការផ្ទៀងផ្ទាត់ការបង់ប្រាក់។ មិនទាន់អាចទាញយកឯកសារបានទេ។</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="settings-modal" id="settingsModal" hidden aria-label="Player profile settings">
+    <form class="settings-card" id="profileSettingsForm">
+      <button class="close-settings" id="closeSettings" type="button" aria-label="Close settings">&times;</button>
+      <p class="eyebrow">Player Settings</p>
+      <h2>Customize Profile</h2>
+      <p class="settings-note">Change the player name and profile picture shown in the menu.</p>
+      <label>
+        Display Name
+        <input id="profileNameInput" type="text" placeholder="Player name" maxlength="40">
+      </label>
+      <label>
+        Avatar Image URL
+        <input id="profileAvatarInput" type="url" placeholder="https://example.com/avatar.png">
+      </label>
+      <div class="settings-actions">
+        <button class="button primary" type="submit">Save Profile</button>
+        <button class="button secondary" id="resetProfileButton" type="button">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer" id="support">
+    <p>&copy; 2026 Dyna Store។ គំរូហាងលក់ហ្គេមឌីជីថល។</p>
+    <a class="telegram-link" href="https://t.me/Maodyna0110" target="_blank" rel="noopener noreferrer" aria-label="ទាក់ទង Dyna Store តាម Telegram">
+      <svg class="telegram-icon" viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M21.9 4.1 18.6 20c-.2 1.1-.9 1.4-1.9.9l-5.1-3.8-2.5 2.4c-.3.3-.5.5-1 .5l.4-5.2 9.4-8.5c.4-.4-.1-.6-.6-.2L5.6 13.5.6 12c-1.1-.3-1.1-1.1.2-1.6L20.4 2.9c.9-.3 1.7.2 1.5 1.2Z"/>
+      </svg>
+      Telegram
+    </a>
+  </footer>
+
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+  <script src="script.js"></script>
+</body>
+</html>

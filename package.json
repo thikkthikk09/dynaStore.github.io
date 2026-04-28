@@ -1,0 +1,15 @@
+{
+  "name": "dyna-store",
+  "version": "1.0.0",
+  "description": "Dyna Store static game shop with Bakong KHQR payment backend.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bakong-khqr": "latest",
+    "dotenv": "latest",
+    "express": "latest",
+    "qrcode": "latest"
+  }
+}
