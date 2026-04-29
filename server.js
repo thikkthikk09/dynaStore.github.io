@@ -8,17 +8,18 @@ const QRCode = require("qrcode");
 const { BakongKHQR, MerchantInfo, khqrData } = require("bakong-khqr");
 
 const app = express();
-const payments = new Map();
 const port = Number(process.env.PORT || 3000);
+const defaultBakongCheckPaymentUrl = "https://api-bakong.nbc.gov.kh/v1/check_transaction_by_md5";
 const databaseDirectory = path.join(__dirname, "data");
 const databasePath = path.join(databaseDirectory, "database.json");
+const payments = new Map();
 const defaultRecommendations = [
   {
     id: "default-dara",
     name: "Dara Player",
     game: "GTA 5 MODE",
     text: "ទិញ Coins លឿន ហើយអាចយកទៅទិញហ្គេមបានងាយ។ UI ស្រួលប្រើណាស់។",
-    avatar: "",
+    avatar: "https://cdn.discordapp.com/attachments/1265789329134059541/1498800653600817245/gta5-featured.jpg?ex=69f3cbe2&is=69f27a62&hm=9fc9566c2e336d8effd67cc773681b3cadd8e3d45a24d2586030752284eb88a4&",
     createdAt: 0
   },
   {
@@ -39,7 +40,7 @@ const defaultRecommendations = [
   }
 ];
 
-app.use(express.json());
+app.use(express.json({ limit: "1mb" }));
 
 function ensureDatabase() {
   if (!fs.existsSync(databaseDirectory)) {
@@ -70,54 +71,18 @@ function cleanText(value, fallback = "") {
   return String(value || fallback).trim().slice(0, 400);
 }
 
-app.get("/api/config", (req, res) => {
-  res.json({
-    googleClientId: process.env.GOOGLE_CLIENT_ID || ""
-  });
-});
+function cleanAvatar(value) {
+  const avatar = String(value || "").trim();
 
-app.get("/api/recommendations", (req, res) => {
-  const database = readDatabase();
-
-  res.json({
-    recommendations: [...(database.recommendations || [])].sort((a, b) => b.createdAt - a.createdAt)
-  });
-});
-
-app.post("/api/recommendations", (req, res) => {
-  const name = cleanText(req.body.name, "Player").slice(0, 40);
-  const game = cleanText(req.body.game).slice(0, 80);
-  const text = cleanText(req.body.text);
-  const avatar = cleanText(req.body.avatar).slice(0, 500);
-
-  if (!game || !text) {
-    res.status(400).json({ message: "Game and recommendation text are required." });
-    return;
+  if (!avatar || avatar.length > 250000) {
+    return "";
   }
 
-  const recommendation = {
-    id: `REC-${Date.now()}-${crypto.randomUUID()}`,
-    name,
-    game,
-    text,
-    avatar,
-    createdAt: Date.now()
-  };
-  const database = readDatabase();
-
-  database.recommendations = [recommendation, ...(database.recommendations || [])].slice(0, 100);
-  writeDatabase(database);
-  res.status(201).json({ recommendation });
-});
-
-function getRequiredEnv(name) {
-  const value = process.env[name];
-
-  if (!value) {
-    throw new Error(`Missing ${name}. Copy .env.example to .env and fill it in.`);
+  if (avatar.startsWith("data:image/") || avatar.startsWith("http://") || avatar.startsWith("https://")) {
+    return avatar;
   }
 
-  return value;
+  return "";
 }
 
 function normalizeAmount(value) {
@@ -128,6 +93,16 @@ function normalizeAmount(value) {
   }
 
   return Number(amount.toFixed(2));
+}
+
+function getRequiredEnv(name) {
+  const value = process.env[name];
+
+  if (!value) {
+    throw new Error(`Missing ${name}. Copy .env.example to .env and fill it in.`);
+  }
+
+  return value;
 }
 
 function getKhqrPayload(response) {
@@ -145,6 +120,7 @@ function getKhqrPayload(response) {
 
 function createMerchantKhqr({ amount, items }) {
   const orderId = `DYNA-${Date.now()}`;
+  const expiresAt = Date.now() + 10 * 60 * 1000;
   const optionalData = {
     currency: khqrData.currency.usd,
     amount,
@@ -152,7 +128,7 @@ function createMerchantKhqr({ amount, items }) {
     mobileNumber: process.env.BAKONG_MERCHANT_PHONE || "",
     storeLabel: process.env.BAKONG_MERCHANT_NAME || "Dyna Store",
     terminalLabel: "WEB",
-    expirationTimestamp: Date.now() + 10 * 60 * 1000,
+    expirationTimestamp: expiresAt,
     merchantCategoryCode: "5816"
   };
   const merchantInfo = new MerchantInfo(
@@ -176,19 +152,44 @@ function createMerchantKhqr({ amount, items }) {
     items,
     md5: payload.md5,
     status: "pending",
-    createdAt: Date.now()
+    createdAt: Date.now(),
+    expiresAt
   });
 
   return {
     orderId,
     khqr: payload.qr,
-    md5: payload.md5
+    md5: payload.md5,
+    expiresAt
   };
+}
+
+function hasBakongTransactionHash(data) {
+  return Boolean(
+    data?.data?.hash ||
+      data?.data?.transactionHash ||
+      data?.data?.bakongHash ||
+      data?.data?.bakongData?.hash ||
+      data?.data?.bakongData?.transactionHash
+  );
+}
+
+function isPaidBakongResponse(data) {
+  const status = String(data?.responseCode || data?.status || data?.data?.status || data?.message || "").toLowerCase();
+
+  return (
+    data?.success === true ||
+    status === "success" ||
+    status === "paid" ||
+    status === "completed" ||
+    status.includes("payment confirmed") ||
+    hasBakongTransactionHash(data)
+  );
 }
 
 async function checkBakongPayment(md5) {
   const token = process.env.BAKONG_API_TOKEN;
-  const url = process.env.BAKONG_CHECK_PAYMENT_URL;
+  const url = process.env.BAKONG_CHECK_PAYMENT_URL || defaultBakongCheckPaymentUrl;
 
   if (!token || !url || !md5) {
     return { paid: false, configured: false };
@@ -208,19 +209,57 @@ async function checkBakongPayment(md5) {
   }
 
   const data = await response.json();
-  const status = String(data?.responseCode || data?.status || data?.data?.status || "").toLowerCase();
 
   return {
-    paid:
-      status === "success" ||
-      status === "paid" ||
-      status === "completed" ||
-      data?.data?.hash ||
-      data?.data?.transactionHash,
+    paid: isPaidBakongResponse(data),
     configured: true,
     raw: data
   };
 }
+
+app.get("/api/config", (req, res) => {
+  res.json({
+    googleClientId: process.env.GOOGLE_CLIENT_ID || "",
+    adminEmails: String(process.env.ADMIN_EMAILS || "")
+      .split(",")
+      .map((email) => email.trim().toLowerCase())
+      .filter(Boolean)
+  });
+});
+
+app.get("/api/recommendations", (req, res) => {
+  const database = readDatabase();
+
+  res.json({
+    recommendations: [...(database.recommendations || [])].sort((a, b) => b.createdAt - a.createdAt)
+  });
+});
+
+app.post("/api/recommendations", (req, res) => {
+  const name = cleanText(req.body.name, "Player").slice(0, 40);
+  const game = cleanText(req.body.game).slice(0, 80);
+  const text = cleanText(req.body.text);
+  const avatar = cleanAvatar(req.body.avatar);
+
+  if (!game || !text) {
+    res.status(400).json({ message: "Game and recommendation text are required." });
+    return;
+  }
+
+  const recommendation = {
+    id: `REC-${Date.now()}-${crypto.randomUUID()}`,
+    name,
+    game,
+    text,
+    avatar,
+    createdAt: Date.now()
+  };
+  const database = readDatabase();
+
+  database.recommendations = [recommendation, ...(database.recommendations || [])].slice(0, 100);
+  writeDatabase(database);
+  res.status(201).json({ recommendation });
+});
 
 app.post("/api/bakong/create-payment", async (req, res) => {
   try {
@@ -237,6 +276,7 @@ app.post("/api/bakong/create-payment", async (req, res) => {
       orderId: payment.orderId,
       md5: payment.md5,
       khqr: payment.khqr,
+      expiresAt: payment.expiresAt,
       qrImage
     });
   } catch (error) {

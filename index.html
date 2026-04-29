@@ -33,7 +33,8 @@
           </span>
         </div>
         <div class="google-account">
-          <button class="google-connect" id="googleConnectButton" type="button">Connect Google</button>
+          <button class="google-connect" id="googleConnectButton" type="button">Login Google</button>
+          <small class="google-login-status" id="googleLoginStatus" hidden></small>
           <div class="google-profile" id="googleProfile" hidden>
             <img id="googleAvatar" src="" alt="">
             <span>
@@ -43,6 +44,7 @@
           </div>
         </div>
         <button class="settings-button" id="settingsButton" type="button" aria-label="Player profile settings">Settings</button>
+        <button class="settings-button" id="giveCoinsButton" type="button" aria-label="Give coins to customer" hidden>Give Coins</button>
         <button class="cart-button" type="button" aria-label="មើលកន្ត្រកទំនិញ" aria-controls="cartPanel" aria-expanded="false">
           កន្ត្រក <span id="cartCount">0</span>
         </button>
@@ -206,12 +208,17 @@
         <strong id="paymentTotal">$0.00</strong>
       </div>
       <div class="payment-options">
-        <button type="button" data-payment="aba">Bakong KHQR</button>
+        <button type="button" data-payment="bakong">Bakong KHQR</button>
       </div>
       <div class="qr-panel" id="abaQrPanel" hidden>
         <h3>Bakong KHQR</h3>
-        <img class="qr-image" src="assets/khqr-mao-dyna.png" alt="Bakong KHQR payment code">
+        <img class="qr-image" src="" alt="Bakong KHQR payment code">
         <p>ស្កេន KHQR ដើម្បីទិញកញ្ចប់ Coins។ ពេល Bakong បញ្ជាក់ថាបង់ប្រាក់ជោគជ័យ Coins នឹងចូល Wallet ស្វ័យប្រវត្តិ។</p>
+        <div class="khqr-payload-box" id="khqrPayloadBox" hidden>
+          <span>KHQR Payload</span>
+          <code id="khqrPayload">-</code>
+          <button class="button secondary full-width" id="copyKhqrButton" type="button">Copy KHQR</button>
+        </div>
         <div class="md5-box" id="md5Box" hidden>
           <span>MD5</span>
           <code id="khqrMd5">-</code>
@@ -232,13 +239,46 @@
         Display Name
         <input id="profileNameInput" type="text" placeholder="Player name" maxlength="40">
       </label>
-      <label>
-        Avatar Image URL
-        <input id="profileAvatarInput" type="url" placeholder="https://example.com/avatar.png">
+      <label class="avatar-upload">
+        <span>Avatar Image</span>
+        <input id="profileAvatarInput" type="file" accept="image/*">
+        <span class="avatar-upload-box">
+          <span class="avatar-upload-icon">+</span>
+          <span>
+            <strong>Choose image</strong>
+            <small>JPG, PNG, or WebP</small>
+          </span>
+        </span>
       </label>
+      <div class="avatar-preview" id="profileAvatarPreview" hidden>
+        <img id="profileAvatarPreviewImage" src="" alt="Selected avatar preview">
+        <span>Selected avatar</span>
+      </div>
       <div class="settings-actions">
         <button class="button primary" type="submit">Save Profile</button>
         <button class="button secondary" id="resetProfileButton" type="button">Reset</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="settings-modal" id="giveCoinsModal" hidden aria-label="Give coins to customer">
+    <form class="settings-card" id="giveCoinsForm">
+      <button class="close-settings" id="closeGiveCoins" type="button" aria-label="Close give coins menu">&times;</button>
+      <p class="eyebrow">Admin Coins</p>
+      <h2>Give Coins</h2>
+      <p class="settings-note">Add Coins to the current customer wallet.</p>
+      <label>
+        Customer Name
+        <input id="giveCoinsCustomerInput" type="text" placeholder="Customer name" maxlength="40">
+      </label>
+      <label>
+        Coins Amount
+        <input id="giveCoinsAmountInput" type="number" placeholder="1000" min="1" step="1" required>
+      </label>
+      <p class="grant-coins-status" id="giveCoinsStatus" hidden></p>
+      <div class="settings-actions">
+        <button class="button primary" type="submit">Give Coins</button>
+        <button class="button secondary" id="clearGiveCoinsButton" type="button">Clear</button>
       </div>
     </form>
   </section>

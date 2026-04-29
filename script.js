@@ -9,76 +9,76 @@ const games = [
     colors: ["#8b5cf6", "#22d3ee"],
     image: "https://cdn.discordapp.com/attachments/1265789329134059541/1498800653600817245/gta5-featured.jpg?ex=69f27a62&is=69f128e2&hm=4c9717b0a50a63538c64dee81bf89003dad534fa6d4a5b2501f78f95197d539b&"
   },
-  {
-    title: "Realmforge Odyssey",
-    genre: "RPG",
-    description: "ស្វែងរកពិភព Fantasy បង្កើតអាវុធកម្រិតខ្ពស់ និងប្រយុទ្ធជាមួយមេបិសាចបុរាណ។",
-    price: 49.99,
-    coinPrice: 5000,
-    badge: "ថ្មី",
-    colors: ["#16a34a", "#84cc16"],
-    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Shadow Ops: Eclipse",
-    genre: "សកម្មភាព",
-    description: "បេសកកម្មយុទ្ធសាស្ត្រ ក្រុមប្រកួតប្រជែង និងការប្រយុទ្ធ Single-player បែបភាពយន្ត។",
-    price: 59.99,
-    coinPrice: 6000,
-    badge: "កំពុងពេញនិយម",
-    colors: ["#ef4444", "#f97316"],
-    image: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Galaxy Traders",
-    genre: "យុទ្ធសាស្ត្រ",
-    description: "បង្កើតកងយាន គ្រប់គ្រងផ្លូវពាណិជ្ជកម្ម និងគ្រប់គ្រងពិភពផ្កាយ។",
-    price: 34.99,
-    coinPrice: 3500,
-    badge: "-35%",
-    colors: ["#2563eb", "#06b6d4"],
-    image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Dungeon Dashers",
-    genre: "លេងជាក្រុម",
-    description: "រត់បេសកកម្មក្នុង Dungeon យ៉ាងលឿន សម្រាប់អ្នកលេងអនឡាញរហូតដល់ 4 នាក់។",
-    price: 24.99,
-    coinPrice: 2500,
-    badge: "ក្រុម",
-    colors: ["#a855f7", "#ec4899"],
-    image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Pixel Farm Tycoon",
-    genre: "ស៊ីមុយឡេសិន",
-    description: "ដាំដំណាំ រៀបចំផលិតកម្មស្វ័យប្រវត្តិ និងតុបតែងកសិដ្ឋានដ៏កក់ក្តៅរបស់អ្នក។",
-    price: 19.99,
-    coinPrice: 2000,
-    badge: "សាមញ្ញ",
-    colors: ["#eab308", "#22c55e"],
-    image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Mech Arena Prime",
-    genre: "បាញ់ប្រហារ",
-    description: "កែប្រែ Mech ធុនធ្ងន់ ហើយប្រយុទ្ធក្នុង Arena ដែលអាចបំផ្លាញបាន។",
-    price: 44.99,
-    coinPrice: 4500,
-    badge: "-15%",
-    colors: ["#64748b", "#38bdf8"],
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80"
-  },
-  {
-    title: "Mystic Card Clash",
-    genre: "កាត",
-    description: "ប្រមូលវេទមន្ត បង្កើត Deck ឆ្លាតវៃ និងប្រកួតឡើងចំណាត់ថ្នាក់តាមរដូវកាល។",
-    price: 14.99,
-    coinPrice: 1500,
-    badge: "តម្លៃល្អ",
-    colors: ["#7c3aed", "#f59e0b"],
-    image: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=900&q=80"
-  }
+  // {
+  //   title: "Realmforge Odyssey",
+  //   genre: "RPG",
+  //   description: "ស្វែងរកពិភព Fantasy បង្កើតអាវុធកម្រិតខ្ពស់ និងប្រយុទ្ធជាមួយមេបិសាចបុរាណ។",
+  //   price: 49.99,
+  //   coinPrice: 5000,
+  //   badge: "ថ្មី",
+  //   colors: ["#16a34a", "#84cc16"],
+  //   image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=900&q=80"
+  // },
+  // {
+  //   title: "Shadow Ops: Eclipse",
+  //   genre: "សកម្មភាព",
+  //   description: "បេសកកម្មយុទ្ធសាស្ត្រ ក្រុមប្រកួតប្រជែង និងការប្រយុទ្ធ Single-player បែបភាពយន្ត។",
+  //   price: 59.99,
+  //   coinPrice: 6000,
+  //   badge: "កំពុងពេញនិយម",
+  //   colors: ["#ef4444", "#f97316"],
+  //   image: "https://images.unsplash.com/photo-1605899435973-ca2d1a8861cf?auto=format&fit=crop&w=900&q=80"
+  // },
+  // {
+  //   title: "Galaxy Traders",
+  //   genre: "យុទ្ធសាស្ត្រ",
+  //   description: "បង្កើតកងយាន គ្រប់គ្រងផ្លូវពាណិជ្ជកម្ម និងគ្រប់គ្រងពិភពផ្កាយ។",
+  //   price: 34.99,
+  //   coinPrice: 3500,
+  //   badge: "-35%",
+  //   colors: ["#2563eb", "#06b6d4"],
+  //   image: "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=900&q=80"
+  // },
+  // {
+  //   title: "Dungeon Dashers",
+  //   genre: "លេងជាក្រុម",
+  //   description: "រត់បេសកកម្មក្នុង Dungeon យ៉ាងលឿន សម្រាប់អ្នកលេងអនឡាញរហូតដល់ 4 នាក់។",
+  //   price: 24.99,
+  //   coinPrice: 2500,
+  //   badge: "ក្រុម",
+  //   colors: ["#a855f7", "#ec4899"],
+  //   image: "https://images.unsplash.com/photo-1606144042614-b2417e99c4e3?auto=format&fit=crop&w=900&q=80"
+  // },
+  // {
+  //   title: "Pixel Farm Tycoon",
+  //   genre: "ស៊ីមុយឡេសិន",
+  //   description: "ដាំដំណាំ រៀបចំផលិតកម្មស្វ័យប្រវត្តិ និងតុបតែងកសិដ្ឋានដ៏កក់ក្តៅរបស់អ្នក។",
+  //   price: 19.99,
+  //   coinPrice: 2000,
+  //   badge: "សាមញ្ញ",
+  //   colors: ["#eab308", "#22c55e"],
+  //   image: "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=900&q=80"
+  // },
+  // {
+  //   title: "Mech Arena Prime",
+  //   genre: "បាញ់ប្រហារ",
+  //   description: "កែប្រែ Mech ធុនធ្ងន់ ហើយប្រយុទ្ធក្នុង Arena ដែលអាចបំផ្លាញបាន។",
+  //   price: 44.99,
+  //   coinPrice: 4500,
+  //   badge: "-15%",
+  //   colors: ["#64748b", "#38bdf8"],
+  //   image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80"
+  // },
+  // {
+  //   title: "Mystic Card Clash",
+  //   genre: "កាត",
+  //   description: "ប្រមូលវេទមន្ត បង្កើត Deck ឆ្លាតវៃ និងប្រកួតឡើងចំណាត់ថ្នាក់តាមរដូវកាល។",
+  //   price: 14.99,
+  //   coinPrice: 1500,
+  //   badge: "តម្លៃល្អ",
+  //   colors: ["#7c3aed", "#f59e0b"],
+  //   image: "https://images.unsplash.com/photo-1611996575749-79a3a250f948?auto=format&fit=crop&w=900&q=80"
+  // }
 ];
 
 const coinPackages = [
@@ -114,6 +114,7 @@ const recommendName = document.querySelector("#recommendName");
 const recommendGame = document.querySelector("#recommendGame");
 const recommendText = document.querySelector("#recommendText");
 const googleConnectButton = document.querySelector("#googleConnectButton");
+const googleLoginStatus = document.querySelector("#googleLoginStatus");
 const googleProfile = document.querySelector("#googleProfile");
 const googleAvatar = document.querySelector("#googleAvatar");
 const googleName = document.querySelector("#googleName");
@@ -124,7 +125,17 @@ const closeSettings = document.querySelector("#closeSettings");
 const profileSettingsForm = document.querySelector("#profileSettingsForm");
 const profileNameInput = document.querySelector("#profileNameInput");
 const profileAvatarInput = document.querySelector("#profileAvatarInput");
+const profileAvatarPreview = document.querySelector("#profileAvatarPreview");
+const profileAvatarPreviewImage = document.querySelector("#profileAvatarPreviewImage");
 const resetProfileButton = document.querySelector("#resetProfileButton");
+const giveCoinsButton = document.querySelector("#giveCoinsButton");
+const giveCoinsModal = document.querySelector("#giveCoinsModal");
+const closeGiveCoins = document.querySelector("#closeGiveCoins");
+const giveCoinsForm = document.querySelector("#giveCoinsForm");
+const giveCoinsCustomerInput = document.querySelector("#giveCoinsCustomerInput");
+const giveCoinsAmountInput = document.querySelector("#giveCoinsAmountInput");
+const giveCoinsStatus = document.querySelector("#giveCoinsStatus");
+const clearGiveCoinsButton = document.querySelector("#clearGiveCoinsButton");
 const cartButton = document.querySelector(".cart-button");
 const cartPanel = document.querySelector("#cartPanel");
 const cartItems = document.querySelector("#cartItems");
@@ -140,15 +151,24 @@ const downloadPurchasedButton = document.querySelector("#downloadPurchasedButton
 const paymentModal = document.querySelector("#paymentModal");
 const closePayment = document.querySelector("#closePayment");
 const paymentTotal = document.querySelector("#paymentTotal");
-const abaPayButton = document.querySelector('[data-payment="aba"]');
+const bakongPayButton = document.querySelector('[data-payment="bakong"]');
 const abaQrPanel = document.querySelector("#abaQrPanel");
 const paymentStatus = document.querySelector("#paymentStatus");
 const topupStatus = document.querySelector("#topupStatus");
 const md5Box = document.querySelector("#md5Box");
 const khqrMd5 = document.querySelector("#khqrMd5");
+const khqrPayloadBox = document.querySelector("#khqrPayloadBox");
+const khqrPayload = document.querySelector("#khqrPayload");
+const copyKhqrButton = document.querySelector("#copyKhqrButton");
 let walletAmount = 0;
 let activePayment = null;
 let paymentPollTimer = null;
+let selectedProfileAvatar = "";
+let adminEmails = [];
+let googleIdentityClient = null;
+let currentCustomerProfile = null;
+let googleLoginError = "";
+let googleClientId = "";
 
 const money = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -180,13 +200,116 @@ function decodeGoogleCredential(credential) {
   return JSON.parse(decodedPayload);
 }
 
+function isAdminEmail(email) {
+  return adminEmails.includes(String(email || "").trim().toLowerCase());
+}
+
+function updateGiveCoinsVisibility() {
+  const isAdmin = isAdminEmail(googleEmail.textContent);
+
+  giveCoinsButton.hidden = !isAdmin;
+
+  if (!isAdmin) {
+    giveCoinsModal.hidden = true;
+  }
+}
+
+function isCustomerLoggedIn() {
+  return Boolean(currentCustomerProfile?.email);
+}
+
+function promptGoogleLogin() {
+  if (googleIdentityClient) {
+    googleIdentityClient.prompt();
+    return;
+  }
+
+  if (googleClientId) {
+    startGoogleRedirectLogin();
+    return;
+  }
+
+  googleLoginStatus.hidden = false;
+  googleLoginStatus.textContent = googleLoginError || "Google login is not ready yet.";
+}
+
+function requireGoogleLogin() {
+  if (isCustomerLoggedIn()) {
+    return true;
+  }
+
+  promptGoogleLogin();
+  return false;
+}
+
 function showGoogleProfile(profile) {
-  googleAvatar.src = profile.picture || "assets/logo.jpeg?v=1";
-  googleAvatar.alt = profile.name ? `${profile.name} profile photo` : "Google profile photo";
-  googleName.textContent = profile.name || "Google User";
-  googleEmail.textContent = profile.email || "Google Account";
+  const savedProfile = getSavedProfile();
+  const displayName = savedProfile?.name || profile.name || "Google User";
+  const displayPicture = savedProfile?.avatar || profile.picture || "assets/logo.jpeg?v=1";
+
+  currentCustomerProfile = {
+    name: profile.name || displayName,
+    email: profile.email || "",
+    picture: profile.picture || displayPicture
+  };
+  googleAvatar.src = displayPicture;
+  googleAvatar.alt = displayName ? `${displayName} profile photo` : "Google profile photo";
+  googleName.textContent = displayName;
+  googleEmail.textContent = currentCustomerProfile.email || "Google Account";
   googleConnectButton.hidden = true;
   googleProfile.hidden = false;
+  updateGiveCoinsVisibility();
+  loadWalletAmount();
+  renderCart();
+}
+
+function startGoogleRedirectLogin() {
+  const redirectUri = `${window.location.origin}${window.location.pathname}`;
+  const params = new URLSearchParams({
+    client_id: googleClientId,
+    redirect_uri: redirectUri,
+    response_type: "token",
+    scope: "openid email profile",
+    prompt: "select_account"
+  });
+
+  window.location.href = `https://accounts.google.com/o/oauth2/v2/auth?${params.toString()}`;
+}
+
+async function finishGoogleRedirectLogin() {
+  const hash = new URLSearchParams(window.location.hash.slice(1));
+  const accessToken = hash.get("access_token");
+
+  if (!accessToken) {
+    return false;
+  }
+
+  window.history.replaceState(null, document.title, `${window.location.pathname}${window.location.search}`);
+
+  try {
+    const response = await fetch("https://www.googleapis.com/oauth2/v3/userinfo", {
+      headers: {
+        Authorization: `Bearer ${accessToken}`
+      }
+    });
+    const profile = await response.json();
+
+    if (!response.ok) {
+      throw new Error(profile.error_description || "Could not read Google profile.");
+    }
+
+    showGoogleProfile({
+      name: profile.name,
+      email: profile.email,
+      picture: profile.picture
+    });
+    return true;
+  } catch (error) {
+    googleLoginError = `Google login failed: ${error.message}`;
+    googleLoginStatus.textContent = googleLoginError;
+    googleLoginStatus.hidden = false;
+    return false;
+  }
 }
 
 function getSavedProfile() {
@@ -201,16 +324,69 @@ function savePlayerProfile(profile) {
   localStorage.setItem("dynaPlayerProfile", JSON.stringify(profile));
 }
 
+function setProfileAvatarPreview(avatar) {
+  selectedProfileAvatar = avatar || "";
+  profileAvatarPreview.hidden = !selectedProfileAvatar;
+  profileAvatarPreviewImage.src = selectedProfileAvatar;
+}
+
+function resizeAvatarImage(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.addEventListener("load", () => {
+      const image = new Image();
+
+      image.addEventListener("load", () => {
+        const size = 256;
+        const canvas = document.createElement("canvas");
+        const scale = Math.min(size / image.width, size / image.height, 1);
+        const width = Math.round(image.width * scale);
+        const height = Math.round(image.height * scale);
+
+        canvas.width = width;
+        canvas.height = height;
+        canvas.getContext("2d").drawImage(image, 0, 0, width, height);
+        resolve(canvas.toDataURL("image/jpeg", 0.82));
+      });
+
+      image.addEventListener("error", () => reject(new Error("Please choose a valid image file.")));
+      image.src = reader.result;
+    });
+
+    reader.addEventListener("error", () => reject(new Error("Could not read the selected image.")));
+    reader.readAsDataURL(file);
+  });
+}
+
+async function getSelectedAvatar() {
+  const [file] = profileAvatarInput.files;
+
+  if (!file) {
+    return selectedProfileAvatar;
+  }
+
+  if (!file.type.startsWith("image/")) {
+    throw new Error("Please choose an image file.");
+  }
+
+  return resizeAvatarImage(file);
+}
+
 function applyPlayerProfile(profile) {
   if (!profile) {
     return;
   }
 
-  showGoogleProfile({
-    name: profile.name || "Player",
-    email: "Custom Profile",
-    picture: profile.avatar || ""
-  });
+  if (!isCustomerLoggedIn()) {
+    return;
+  }
+
+  googleAvatar.src = profile.avatar || currentCustomerProfile.picture || "assets/logo.jpeg?v=1";
+  googleAvatar.alt = `${profile.name || currentCustomerProfile.name || "Player"} profile photo`;
+  googleName.textContent = profile.name || currentCustomerProfile.name || "Player";
+  googleEmail.textContent = currentCustomerProfile.email;
+  updateGiveCoinsVisibility();
 }
 
 function loadPlayerProfile() {
@@ -221,12 +397,27 @@ function loadPlayerProfile() {
   }
 
   profileNameInput.value = savedProfile.name || "";
-  profileAvatarInput.value = savedProfile.avatar || "";
+  profileAvatarInput.value = "";
+  setProfileAvatarPreview(savedProfile.avatar || "");
   applyPlayerProfile(savedProfile);
 }
 
 function waitForGoogleIdentity() {
   return new Promise((resolve, reject) => {
+    if (window.google?.accounts?.id) {
+      resolve(window.google.accounts.id);
+      return;
+    }
+
+    const script = document.querySelector('script[src="https://accounts.google.com/gsi/client"]') || document.createElement("script");
+
+    if (!script.src) {
+      script.src = "https://accounts.google.com/gsi/client";
+      script.async = true;
+      script.defer = true;
+      document.head.append(script);
+    }
+
     let attempts = 0;
     const timer = setInterval(() => {
       attempts += 1;
@@ -237,7 +428,7 @@ function waitForGoogleIdentity() {
         return;
       }
 
-      if (attempts > 40) {
+      if (attempts > 80) {
         clearInterval(timer);
         reject(new Error("Google sign-in could not load."));
       }
@@ -250,29 +441,51 @@ async function initGoogleSignIn() {
     const response = await fetch("/api/config");
     const config = await response.json();
 
-    if (!config.googleClientId) {
-      googleConnectButton.textContent = "Set Google ID";
-      googleConnectButton.disabled = true;
+    adminEmails = Array.isArray(config.adminEmails) ? config.adminEmails : [];
+    googleClientId = config.googleClientId || "";
+    updateGiveCoinsVisibility();
+
+    if (await finishGoogleRedirectLogin()) {
+      return;
+    }
+
+    if (!googleClientId) {
+      googleLoginError = "Missing GOOGLE_CLIENT_ID in .env";
+      googleLoginStatus.textContent = googleLoginError;
+      googleLoginStatus.hidden = false;
+      googleConnectButton.textContent = "Login Google";
+      googleConnectButton.disabled = false;
       return;
     }
 
     const googleIdentity = await waitForGoogleIdentity();
+    googleIdentityClient = googleIdentity;
 
     googleIdentity.initialize({
-      client_id: config.googleClientId,
+      client_id: googleClientId,
       callback: (response) => {
         showGoogleProfile(decodeGoogleCredential(response.credential));
       }
     });
 
-    googleConnectButton.addEventListener("click", () => {
-      googleIdentity.prompt();
-    });
+    googleLoginError = "";
+    googleLoginStatus.hidden = true;
+    googleConnectButton.textContent = "Login Google";
+    googleConnectButton.disabled = false;
   } catch (error) {
-    googleConnectButton.textContent = "Google unavailable";
-    googleConnectButton.disabled = true;
+    googleLoginError = googleClientId
+      ? "Google popup blocked. Click Login Google to use redirect login."
+      : "Google config unavailable. Create .env with GOOGLE_CLIENT_ID.";
+    googleLoginStatus.textContent = googleLoginError;
+    googleLoginStatus.hidden = false;
+    googleConnectButton.textContent = "Login Google";
+    googleConnectButton.disabled = false;
   }
 }
+
+googleConnectButton.addEventListener("click", () => {
+  promptGoogleLogin();
+});
 
 function formatCoins(value) {
   return `${Math.round(value).toLocaleString("en-US")} Coins`;
@@ -282,9 +495,26 @@ function getGameCoins(game) {
   return game.coinPrice || Math.round(game.price * 100);
 }
 
+function getWalletStorageKey() {
+  return currentCustomerProfile?.email
+    ? `dynaWalletAmount:${currentCustomerProfile.email.toLowerCase()}`
+    : "dynaWalletAmount:guest";
+}
+
+function loadWalletAmount() {
+  const savedWalletAmount = Number(localStorage.getItem(getWalletStorageKey()));
+
+  walletAmount = Number.isFinite(savedWalletAmount) && savedWalletAmount > 0 ? savedWalletAmount : 0;
+}
+
+function saveWalletAmount() {
+  localStorage.setItem(getWalletStorageKey(), String(Math.max(0, Math.round(walletAmount))));
+}
+
 function updateCoinUi() {
   walletBalance.textContent = formatCoins(walletAmount);
   playerCoins.textContent = Math.round(walletAmount).toLocaleString("en-US");
+  saveWalletAmount();
 }
 
 function renderCoinPackages() {
@@ -336,8 +566,8 @@ function renderGames() {
 
 function getActiveRecommendProfile(name) {
   return {
-    name: name.trim() || googleName.textContent.trim() || "Player",
-    avatar: googleProfile.hidden ? "" : googleAvatar.src
+    name: name.trim() || currentCustomerProfile?.name || googleName.textContent.trim() || "Player",
+    avatar: isCustomerLoggedIn() ? googleAvatar.src : ""
   };
 }
 
@@ -466,10 +696,12 @@ Thank you for buying from Dyna Store.`;
 
 function resetPaymentState() {
   topupStatus.hidden = true;
-  md5Box.hidden = true;
-  khqrMd5.textContent = "-";
   activePayment = null;
   clearInterval(paymentPollTimer);
+  md5Box.hidden = true;
+  khqrPayloadBox.hidden = true;
+  khqrMd5.textContent = "-";
+  khqrPayload.textContent = "-";
   paymentStatus.textContent = "កំពុងរង់ចាំ Bakong ផ្ទៀងផ្ទាត់ការបង់ប្រាក់។ Coins មិនទាន់ចូល Wallet ទេ។";
 }
 
@@ -493,7 +725,7 @@ async function checkBakongPayment() {
 
   try {
     const response = await fetch(`/api/bakong/payments/${activePayment.orderId}`);
-    const data = await response.json();
+    const data = await readJsonResponse(response);
 
     if (!response.ok) {
       throw new Error(data.message || "Payment check failed.");
@@ -534,7 +766,7 @@ async function startBakongPayment(coinPackage) {
         items: [{ title: coinPackage.name, coins: coinPackage.coins, price: coinPackage.price }]
       })
     });
-    const data = await response.json();
+    const data = await readJsonResponse(response);
 
     if (!response.ok) {
       throw new Error(data.message || "Could not create Bakong payment.");
@@ -547,6 +779,8 @@ async function startBakongPayment(coinPackage) {
       coinPackage
     };
     document.querySelector(".qr-image").src = data.qrImage;
+    khqrPayload.textContent = data.khqr || "No KHQR payload returned";
+    khqrPayloadBox.hidden = !data.khqr;
     khqrMd5.textContent = data.md5 || "No MD5 returned";
     md5Box.hidden = false;
     paymentStatus.textContent = "ស្កេន QR ហើយរង់ចាំការផ្ទៀងផ្ទាត់ពី Bakong...";
@@ -562,6 +796,11 @@ function buyGamesWithCoins() {
   const total = getCartTotal();
 
   cartMessage.textContent = "";
+
+  if (!requireGoogleLogin()) {
+    cartMessage.textContent = "Please login with Google first.";
+    return;
+  }
 
   if (cart.length === 0) {
     cartEmpty.hidden = false;
@@ -590,6 +829,10 @@ gameGrid.addEventListener("click", (event) => {
   }
 
   event.stopPropagation();
+
+  if (!requireGoogleLogin()) {
+    return;
+  }
 
   const selectedGame = games[Number(button.dataset.gameIndex)];
 
@@ -622,6 +865,10 @@ coinGrid.addEventListener("click", (event) => {
     return;
   }
 
+  if (!requireGoogleLogin()) {
+    return;
+  }
+
   selectedCoinPackage = coinPackages[Number(button.dataset.coinPackage)];
   paymentTotal.textContent = money.format(selectedCoinPackage.price);
   paymentModal.hidden = false;
@@ -648,14 +895,20 @@ document.addEventListener("keydown", (event) => {
   if (event.key === "Escape") {
     setCartPanelOpen(false);
     settingsModal.hidden = true;
+    giveCoinsModal.hidden = true;
   }
 });
 
 settingsButton.addEventListener("click", () => {
+  if (!requireGoogleLogin()) {
+    return;
+  }
+
   const savedProfile = getSavedProfile();
 
   profileNameInput.value = savedProfile?.name || googleName.textContent || "";
-  profileAvatarInput.value = savedProfile?.avatar || googleAvatar.src || "";
+  profileAvatarInput.value = "";
+  setProfileAvatarPreview(savedProfile?.avatar || (googleProfile.hidden ? "" : googleAvatar.src));
   settingsModal.hidden = false;
 });
 
@@ -663,25 +916,41 @@ closeSettings.addEventListener("click", () => {
   settingsModal.hidden = true;
 });
 
-profileSettingsForm.addEventListener("submit", (event) => {
+profileAvatarInput.addEventListener("change", async () => {
+  try {
+    setProfileAvatarPreview(await getSelectedAvatar());
+  } catch (error) {
+    alert(error.message);
+    profileAvatarInput.value = "";
+  }
+});
+
+profileSettingsForm.addEventListener("submit", async (event) => {
   event.preventDefault();
 
-  const profile = {
-    name: profileNameInput.value.trim() || "Player",
-    avatar: profileAvatarInput.value.trim()
-  };
+  try {
+    const profile = {
+      name: profileNameInput.value.trim() || "Player",
+      avatar: await getSelectedAvatar()
+    };
 
-  savePlayerProfile(profile);
-  applyPlayerProfile(profile);
-  settingsModal.hidden = true;
+    savePlayerProfile(profile);
+    applyPlayerProfile(profile);
+    settingsModal.hidden = true;
+  } catch (error) {
+    alert(error.message);
+  }
 });
 
 resetProfileButton.addEventListener("click", () => {
   localStorage.removeItem("dynaPlayerProfile");
   profileNameInput.value = "";
   profileAvatarInput.value = "";
+  setProfileAvatarPreview("");
+  currentCustomerProfile = null;
   googleProfile.hidden = true;
   googleConnectButton.hidden = false;
+  updateGiveCoinsVisibility();
   settingsModal.hidden = true;
 });
 
@@ -691,7 +960,61 @@ settingsModal.addEventListener("click", (event) => {
   }
 });
 
+giveCoinsButton.addEventListener("click", () => {
+  if (!isAdminEmail(googleEmail.textContent)) {
+    giveCoinsButton.hidden = true;
+    return;
+  }
+
+  giveCoinsCustomerInput.value = googleProfile.hidden ? "" : googleName.textContent;
+  giveCoinsAmountInput.value = "";
+  giveCoinsStatus.hidden = true;
+  giveCoinsModal.hidden = false;
+});
+
+closeGiveCoins.addEventListener("click", () => {
+  giveCoinsModal.hidden = true;
+});
+
+clearGiveCoinsButton.addEventListener("click", () => {
+  giveCoinsAmountInput.value = "";
+  giveCoinsStatus.hidden = true;
+});
+
+giveCoinsForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!isAdminEmail(googleEmail.textContent)) {
+    updateGiveCoinsVisibility();
+    return;
+  }
+
+  const coins = Number(giveCoinsAmountInput.value);
+  const customerName = giveCoinsCustomerInput.value.trim() || googleName.textContent.trim() || "Customer";
+
+  if (!Number.isFinite(coins) || coins <= 0) {
+    giveCoinsStatus.hidden = false;
+    giveCoinsStatus.textContent = "Please enter a valid Coins amount.";
+    return;
+  }
+
+  walletAmount += Math.round(coins);
+  renderCart();
+  giveCoinsStatus.hidden = false;
+  giveCoinsStatus.textContent = `Gave ${formatCoins(coins)} to ${customerName}.`;
+});
+
+giveCoinsModal.addEventListener("click", (event) => {
+  if (event.target === giveCoinsModal) {
+    giveCoinsModal.hidden = true;
+  }
+});
+
 recommendToggle.addEventListener("click", () => {
+  if (!requireGoogleLogin()) {
+    return;
+  }
+
   const isOpen = recommendForm.hidden;
 
   recommendForm.hidden = !isOpen;
@@ -704,6 +1027,11 @@ recommendToggle.addEventListener("click", () => {
 
 recommendForm.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  if (!requireGoogleLogin()) {
+    return;
+  }
+
   const profile = getActiveRecommendProfile(recommendName.value);
   const recommendation = {
     name: profile.name,
@@ -737,12 +1065,32 @@ recommendForm.addEventListener("submit", async (event) => {
 
 closePayment.addEventListener("click", () => {
   paymentModal.hidden = true;
+  clearInterval(paymentPollTimer);
 });
 
-abaPayButton.addEventListener("click", () => {
+bakongPayButton.addEventListener("click", () => {
   if (selectedCoinPackage) {
     startBakongPayment(selectedCoinPackage);
   }
+});
+
+copyKhqrButton.addEventListener("click", async () => {
+  const payload = khqrPayload.textContent;
+
+  if (!payload || payload === "-") {
+    return;
+  }
+
+  try {
+    await navigator.clipboard.writeText(payload);
+    copyKhqrButton.textContent = "Copied KHQR";
+  } catch {
+    copyKhqrButton.textContent = "Copy failed";
+  }
+
+  setTimeout(() => {
+    copyKhqrButton.textContent = "Copy KHQR";
+  }, 1800);
 });
 
 downloadPurchasedButton.addEventListener("click", () => {
@@ -752,9 +1100,11 @@ downloadPurchasedButton.addEventListener("click", () => {
 paymentModal.addEventListener("click", (event) => {
   if (event.target === paymentModal) {
     paymentModal.hidden = true;
+    clearInterval(paymentPollTimer);
   }
 });
 
+loadWalletAmount();
 renderCart();
 renderCoinPackages();
 renderGames();

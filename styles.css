@@ -132,7 +132,8 @@ a.button {
 }
 
 .google-account {
-  display: inline-flex;
+  display: inline-grid;
+  gap: 5px;
   align-items: center;
 }
 
@@ -149,8 +150,20 @@ a.button {
 }
 
 .google-connect:disabled {
-  cursor: not-allowed;
+  cursor: pointer;
   opacity: 0.62;
+}
+
+.google-login-status {
+  max-width: 190px;
+  color: #fecaca;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.google-login-status[hidden] {
+  display: none;
 }
 
 .google-profile {
@@ -922,10 +935,97 @@ h3 {
   box-shadow: 0 0 0 3px rgba(34, 211, 238, 0.12);
 }
 
+.avatar-upload input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.avatar-upload-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  border: 1px dashed rgba(34, 211, 238, 0.42);
+  border-radius: 18px;
+  padding: 14px;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.avatar-upload-box:hover,
+.avatar-upload input:focus + .avatar-upload-box {
+  border-color: rgba(34, 211, 238, 0.7);
+  background: rgba(34, 211, 238, 0.12);
+  transform: translateY(-1px);
+}
+
+.avatar-upload-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  color: #071018;
+  background: linear-gradient(135deg, var(--brand-2), #a7f3d0);
+  font-size: 1.4rem;
+  font-weight: 900;
+}
+
+.avatar-upload-box strong,
+.avatar-upload-box small {
+  display: block;
+}
+
+.avatar-upload-box small {
+  margin-top: 2px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.avatar-preview {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.avatar-preview[hidden] {
+  display: none;
+}
+
+.avatar-preview img {
+  width: 46px;
+  height: 46px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
 .settings-actions {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+.grant-coins-status {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 14px;
+  color: #071018;
+  background: #a7f3d0;
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.grant-coins-status[hidden] {
+  display: none;
 }
 
 .payment-card::-webkit-scrollbar {
@@ -1047,6 +1147,7 @@ h3 {
   line-height: 1.7;
 }
 
+.khqr-payload-box,
 .md5-box {
   display: grid;
   gap: 6px;
@@ -1057,21 +1158,28 @@ h3 {
   text-align: left;
 }
 
+.khqr-payload-box[hidden],
 .md5-box[hidden] {
   display: none;
 }
 
+.khqr-payload-box span,
 .md5-box span {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 800;
 }
 
+.khqr-payload-box code,
 .md5-box code {
   overflow-wrap: anywhere;
   color: #a7f3d0;
   font-family: ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
   font-size: 0.82rem;
+}
+
+.khqr-payload-box .button {
+  margin-top: 6px;
 }
 
 .payment-status {
